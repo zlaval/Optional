@@ -4,12 +4,9 @@ import com.zlrx.javadevzed.optional.pojo.Car;
 
 public class NullPointerExceptionExample {
 
-
-
-  public static void main(String[] args) {
-    Car car = null;
-    car.getAge();
-  }
-
+    public static void main(String[] args) {
+        Car car = null;
+        car.getAge();
+    }
 
 }
