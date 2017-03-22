@@ -18,7 +18,7 @@ public class BadPracticeExample {
   }
 
   public void valueMustWrapToCallMethodWithOptionalParam() {
-    Car car = new Car();
+    Car car = new Car("Tesla", 3);
     Optional<Car> carOptional = Optional.ofNullable(car);
     methodWithOptionalParamMustCheckTwice(carOptional);
   }

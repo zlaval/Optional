@@ -1,13 +1,19 @@
 package com.zlrx.javadevzed.optional.pojo;
 
+import java.util.Random;
+
 public class Car {
 
-  private String manufacturer;
+  private static final Random random = new Random();
 
-  private Integer age;
+  private final long id = random.nextLong();
 
-  public Car() {
-  }
+  private final String manufacturer;
+
+  private final Integer age;
+
+  private int horsePower = 100;
+
 
   public Car(String manufacturer, Integer age) {
     this.manufacturer = manufacturer;
@@ -22,4 +28,15 @@ public class Car {
     return age;
   }
 
+  public long getId() {
+    return id;
+  }
+
+  public int getHorsePower() {
+    return horsePower;
+  }
+
+  public void setHorsePower(int horsePower) {
+    this.horsePower = horsePower;
+  }
 }
