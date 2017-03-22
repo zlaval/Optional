@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class BadPracticeExample {
 
-  private void methodWithOptionalParam(Optional<Car> carMaybePresent) {
+  private void methodWithOptionalParamMustCheckTwice(Optional<Car> carMaybePresent) {
     if (Objects.nonNull(carMaybePresent)) {
       if (carMaybePresent.isPresent()) {
         Car car = carMaybePresent.get();
@@ -20,7 +20,7 @@ public class BadPracticeExample {
   public void valueMustWrapToCallMethodWithOptionalParam() {
     Car car = new Car();
     Optional<Car> carOptional = Optional.ofNullable(car);
-    methodWithOptionalParam(carOptional);
+    methodWithOptionalParamMustCheckTwice(carOptional);
   }
 
 
@@ -30,12 +30,5 @@ public class BadPracticeExample {
     return nullList;
     //Never ever do this, or return null. Return with empty collection instead.
   }
-
-
-  public static void main(String[] args) {
-
-  }
-
-
 
 }
