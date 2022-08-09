@@ -1,7 +1,7 @@
-package com.zlrx.javadevzed.optional;
+package com.zlrx.article.optional;
 
 
-import com.zlrx.javadevzed.optional.domain.Car;
+import com.zlrx.article.optional.domain.Car;
 
 public class NullPointerExceptionExample {
 

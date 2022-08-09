@@ -1,4 +1,4 @@
-package com.zlrx.javadevzed.optional;
+package com.zlrx.article.optional;
 
 import java.util.Objects;
 import java.util.Optional;

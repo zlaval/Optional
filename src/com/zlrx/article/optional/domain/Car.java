@@ -1,4 +1,4 @@
-package com.zlrx.javadevzed.optional.domain;
+package com.zlrx.article.optional.domain;
 
 import java.util.Random;
 
