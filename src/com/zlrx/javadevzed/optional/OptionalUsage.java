@@ -47,18 +47,25 @@ public class OptionalUsage {
     }
 
     private void functions() {
-        Optional<String> name = Optional.of("Zalan");
+        Optional<String> name = Optional.of("Zalerix");
 
         Optional<String> nameOrEmpty = name.filter(val -> val.length() == 5);
         Optional<Integer> nameLength = name.map(String::length);
+        //TODO better example
         Optional<Integer> emptyOrLength = name.flatMap(str -> Objects.isNull(str) ? nameLength : Optional.of(str.length()));
 
-        Optional<Integer> sumOfChars = name.filter(val -> val
-                .length() == 5)
+        Optional<Integer> sumOfChars = name
+                .filter(val -> val.length() == 5)
                 .map(String::length)
                 .flatMap(num -> num < 1 ? Optional.empty() : Optional.of(num));
+
+        //  name.ifPresentOrElse();
+
+
         System.out.println(sumOfChars);
     }
+
+    //todo null check chain example
 
     public static void main(String[] args) {
         OptionalUsage optionalUsage = new OptionalUsage();
