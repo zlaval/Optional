@@ -11,17 +11,13 @@ public class CarTuningApiExample {
     private CarDbSimulator repository = new CarDbSimulator();
 
     public Optional<Car> tuning(Car car) {
-        if (car != null) {
-            Car tuningCar = updateEngine(car);
-            return Optional.ofNullable(tuningCar);
-        }
-        return Optional.empty();
+        return Optional.ofNullable(car)
+                .map(this::updateEngine);
     }
 
     private Car updateEngine(Car car) {
         Car tunable = refreshFromDb(car);
         if (tunable != null) {
-            //make some tuning
             tunable = tunable.updateHorsePower(300);
         }
         return tunable;
@@ -32,10 +28,12 @@ public class CarTuningApiExample {
     }
 
     class CarDbSimulator {
+
+        //Randomly returns a Car instance or null
         Car findCarById(long id) {
             Random random = new Random();
             if (random.nextBoolean()) {
-                return new Car("Tesla", 1);
+                return new Car("Toyota", 1);
             }
             return null;
         }

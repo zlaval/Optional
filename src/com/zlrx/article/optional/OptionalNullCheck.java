@@ -63,7 +63,6 @@ public class OptionalNullCheck {
             } else {
                 pistons = List.of();
             }
-
         }
 
         //or
