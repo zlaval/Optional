@@ -71,6 +71,7 @@ public class OptionalUsage {
 
         //  name.ifPresentOrElse();
         //sum
+        name.ifPresentOrElse(System.out::println, () -> System.out.println("Missing value"));
 
         System.out.println(sumOfChars);
     }
