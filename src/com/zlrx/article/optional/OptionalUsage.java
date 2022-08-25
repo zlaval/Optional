@@ -69,14 +69,11 @@ public class OptionalUsage {
                 .map(s -> s + s)
                 .flatMap(mapper::calculateLength);
 
-        //  name.ifPresentOrElse();
-        //sum
+
         name.ifPresentOrElse(System.out::println, () -> System.out.println("Missing value"));
 
         System.out.println(sumOfChars);
     }
-
-    //todo null check chain example
 
     public static void main(String[] args) {
         OptionalUsage optionalUsage = new OptionalUsage();
